@@ -68,6 +68,7 @@ The derived key is then base64-encoded for use in encryption and decryption func
      $\text{message} = \text{Fernet}(\text{key}).\text{decrypt}(\text{encrypted\_message})$
    - The decryption process involves taking the derived key and the encrypted message, and using the `Fernet` scheme to produce the original plaintext message.
 
+
 ### Usage
 
 To use the program, follow these steps:
