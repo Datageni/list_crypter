@@ -17,7 +17,7 @@ The repository is divided into three main scripts:
      - `create_list()`: Create new lists.
      - `read_list()`: Read and decrypt existing lists.
      - `update_list()`: Update tasks within a list.
-     - `delete_list()`: Delete specific tasks from a list.
+     - `delete_list()`: Deletes entire lists.
 
 3. **functions.py**
    - Stores functions unrelated to CRUD operations.
