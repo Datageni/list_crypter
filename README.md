@@ -53,20 +53,21 @@ The derived key is then base64-encoded for use in encryption and decryption func
 1. **Key Derivation:**
    - The `PBKDF2HMAC` function derives a key from the user's password and salt using HMAC (Hash-based Message Authentication Code) with SHA256 as the hashing algorithm.
    - Formula: 
-     $\text{key} = \text{Base64Encode}(\text{PBKDF2HMAC}(\text{password}, \text{salt}, \text{iterations} = 100000, \text{algorithm} = \text{SHA256}, \text{length} = 32))$
+     $ \text{key} = \text{Base64Encode}(\text{PBKDF2HMAC}(\text{password}, \text{salt}, \text{iterations} = 100000, \text{algorithm} = \text{SHA256}, \text{length} = 32)) $
    - Here, the `PBKDF2HMAC` function applies the HMAC algorithm 100,000 times to the password and salt to derive a 32-byte key. The key is then encoded in base64 for use.
 
 2. **Encryption:**
    - The `Fernet` encryption scheme from the `cryptography` library is used to encrypt messages.
    - Formula: 
-     $\text{encrypted\_message} = \text{Fernet}(\text{key}).\text{encrypt}(\text{message})$
+     $ \text{encrypted\_message} = \text{Fernet}(\text{key}).\text{encrypt}(\text{message}) $
    - The encryption process involves taking the derived key and the plaintext message, and using the `Fernet` scheme to produce an encrypted message.
 
 3. **Decryption:**
    - The `Fernet` decryption scheme is used to decrypt messages.
    - Formula: 
-     $\text{message} = \text{Fernet}(\text{key}).\text{decrypt}(\text{encrypted\_message})$
+     $ \text{message} = \text{Fernet}(\text{key}).\text{decrypt}(\text{encrypted\_message}) $
    - The decryption process involves taking the derived key and the encrypted message, and using the `Fernet` scheme to produce the original plaintext message.
+
 
 
 
